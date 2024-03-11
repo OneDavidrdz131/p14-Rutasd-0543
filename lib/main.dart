@@ -1,43 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:Rodriguez0543/pantalla2_0543.dart';
+import 'package:Rodriguez0543/pantalla1_0543.dart';
+import 'package:Rodriguez0543/pantallaini_0543.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const Miapp0543());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  // This widget is the root of your application.
+class Miapp0543 extends StatelessWidget {
+  const Miapp0543({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
-      theme: ThemeData(
-        // useMaterial3: true,
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
-        ),
-      ),
-    );
-  }
-}
+      debugShowCheckedModeBanner: false,
+      initialRoute: "/",
+      routes: {
+        "/": (context) => const Pantallaini_0543(),
+        "/pantalla1_0543": (context) => const Pantalla1_0543(),
+        "/pantalla2_0543": (context) => const Pantalla2_0543(),
+      },
+    ); //Fin de material
+  } //fin widgwet
+} //fin app
